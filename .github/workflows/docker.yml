@@ -23,7 +23,7 @@ jobs:
       uses: matootie/dokube@v1.4.0
       with:
         personalAccessToken: ${{ secrets.DIGITALOCEAN_TOKEN }}
-        clusterName: kubernetes
+        clusterName: kuberentes
     - name: Get nodes
       run: kubectl get nodes        
         
