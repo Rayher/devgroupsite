@@ -19,4 +19,12 @@ jobs:
     - name: docker push
       run: |
         docker push rayher/site:latest
+    - name: Set up kubectl
+      uses: matootie/dokube@v1.4.0
+      with:
+        personalAccessToken: ${{ secrets.DIGITALOCEAN_TOKEN }}
+        clusterName: kuberentes
+    - name: restart site
+#                                  deployment/<<deploymentname>>
+      run: kubectl rollout restart deployment/site 
         
