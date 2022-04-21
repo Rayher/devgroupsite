@@ -15,8 +15,8 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: docker build site
       run: |
-        docker build -t rayher/site:${{ github.sha }} .
+        docker build -t rayher/site:latest .
     - name: docker push
       run: |
-        docker push rayher/site:${{ github.sha }}
+        docker push rayher/site:latest
         
