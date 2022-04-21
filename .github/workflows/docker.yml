@@ -24,6 +24,7 @@ jobs:
       with:
         personalAccessToken: ${{ secrets.DIGITALOCEAN_TOKEN }}
         clusterName: kuberentes
-    - name: Get nodes
-      run: kubectl get nodes        
+    - name: restart site
+#                                  deployment/<<deploymentname>>
+      run: kubectl rollout restart deployment/site 
         
